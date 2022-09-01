@@ -5,7 +5,11 @@ const dotenv = require("dotenv").config();
 const cors = require("cors");
 app.set("port", process.env.PORT || 8099);
 const PORT = app.get("port");
-app.use(cors());
+app.use(
+  cors({
+    credentials: true,
+  })
+);
 // mongodb관련 모듈
 const MongoClient = require("mongodb").MongoClient;
 
