@@ -51,7 +51,7 @@ app.post("/voca/add", (req, res) => {
       day: parseInt(req.body.day),
       eng: req.body.eng,
       kor: req.body.kor,
-      isDone: parseBoolean(req.body.isDone),
+      isDone: Boolean(req.body.isDone),
       id: result.vocasTotal,
     };
     db.collection("vocas").insertOne(insertData, (err, result) => {
