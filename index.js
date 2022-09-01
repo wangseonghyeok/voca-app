@@ -44,7 +44,7 @@ app.post("/day/add", (req, res) => {
 app.post("/voca/add", (req, res) => {
   db.collection("counter").findOne({ name: "count" }, (err, result) => {
     const insertData = {
-      day: req.body.day,
+      day: parseInt(req.body.day),
       eng: req.body.eng,
       kor: req.body.kor,
       isDone: parseBoolean(req.body.isDone),
